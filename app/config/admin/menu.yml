@@ -11,4 +11,5 @@ easy_admin:
                   - { entity: 'Nationalite', icon: 'th-list', label: 'Nationalité', params: { sortField: 'nom' }, default: true }
                   - { entity: 'TypeJeu', icon: 'th-list', label: 'Type jeu', params: { sortField: 'nom' }, default: true }
                   - { entity: 'TypeTiers', icon: 'th-list', label: 'Type tiers', params: { sortField: 'nom' }, default: true }
+                  - { entity: 'ThemeJeu', icon: 'th-list', label: 'Theme jeu', params: { sortField: 'nom' }, default: true }
             - { label: 'Utilisateurs', entity: 'User', icon: 'hand-o-right' }       

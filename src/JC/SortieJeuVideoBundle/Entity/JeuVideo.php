@@ -48,6 +48,12 @@ class JeuVideo
     private $typesJeu;  
 
     /**
+     * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ThemeJeu", cascade={"persist"})
+     */
+    private $themesJeu;  
+
+
+    /**
      * __toString
      *
      * @return string
@@ -322,5 +328,39 @@ class JeuVideo
     public function getSupport()
     {
         return $this->support;
+    }
+
+    /**
+     * Add themesJeu
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\ThemeJeu $themesJeu
+     *
+     * @return JeuVideo
+     */
+    public function addThemesJeu(\JC\SortieJeuVideoBundle\Entity\ThemeJeu $themesJeu)
+    {
+        $this->themesJeu[] = $themesJeu;
+
+        return $this;
+    }
+
+    /**
+     * Remove themesJeu
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\ThemeJeu $themesJeu
+     */
+    public function removeThemesJeu(\JC\SortieJeuVideoBundle\Entity\ThemeJeu $themesJeu)
+    {
+        $this->themesJeu->removeElement($themesJeu);
+    }
+
+    /**
+     * Get themesJeu
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getThemesJeu()
+    {
+        return $this->themesJeu;
     }
 }
