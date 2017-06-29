@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Jeux rétrocompatibles XBOX ONE{% endblock %}</title>
+        {% block stylesheets %}
+        <!--'css/bootstrap.css'-->
+        {% stylesheets filter='cssrewrite'
+          'bundles/app/css/styleSandstone.css'
+          'css/font-awesome.css' %}
+          <link href="{{ asset_url }}" rel="stylesheet">
+        {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />  
+    </head>
+    <body>
+
+        {% block body %}{% endblock %}  
+        <!--  '@AppBundle/Resources/public/js/script.js' -->    
+        {% block javascripts %}
+        {% javascripts
+          'js/jquery.min.js'
+          'js/jquery-ui.min.js'
+          'js/bootstrap.js'
+        %}
+          <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

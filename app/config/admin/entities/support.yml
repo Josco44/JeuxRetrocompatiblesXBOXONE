@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+        Support:
+            class: JC\SortieJeuVideoBundle\Entity\Support
+            list:
+                fields:
+                    - id
+                    - nom
+                    - noOrdre
+                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - published
+            show:
+                fields:
+                    - id
+                    - nom
+                    - noOrdre
+                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - description
+                    - published
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - nom
+                    - noOrdre
+                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - description
+                    - published

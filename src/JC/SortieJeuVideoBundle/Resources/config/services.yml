@@ -1,0 +1,4 @@
+services:
+#    jc_sortie_jeu_video.example:
+#        class: JC\SortieJeuVideoBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

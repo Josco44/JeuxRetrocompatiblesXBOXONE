@@ -1,0 +1,33 @@
+easy_admin:
+    entities:
+        Tiers:
+            class: JC\SortieJeuVideoBundle\Entity\Tiers
+            list:
+                fields:
+                    - id
+                    - nom
+                    - adresse
+                    - site
+                    - published
+                    - nationalite
+                    - typeTiers
+            show:
+                fields:
+                    - id
+                    - nom
+                    - adresse
+                    - site
+                    - published
+                    - { property: 'dateCreation', format: 'j / M / Y' }
+                    - nationalite
+                    - typeTiers
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - nom
+                    - adresse
+                    - site
+                    - published
+                    - { property: 'dateCreation', format: 'j / M / Y' }
+                    - nationalite
+                    - typeTiers

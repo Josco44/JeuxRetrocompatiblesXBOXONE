@@ -1,0 +1,25 @@
+easy_admin:
+    entities:
+        JeuVideo:
+            class: JC\SortieJeuVideoBundle\Entity\JeuVideo
+            list:
+                fields:
+                    - nom
+                    - published
+                    - typesJeu
+            show:
+                fields:
+                    - id
+                    - nom
+                    - description
+                    - published
+                    - typesJeu
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - nom
+                    - published 
+                    - description
+                    - published
+                    - typesJeu                                    
+

@@ -1,0 +1,14 @@
+easy_admin:
+    design:
+        menu:
+            - { label: 'Sortie Jeu Video', entity: 'SortieJeuVideo', icon: 'hand-o-right', params: { sortField: 'dateSortie' } } 
+            - { label: 'Jeu Video', entity: 'JeuVideo', icon: 'hand-o-right', params: { sortField: 'nom' } } 
+            - { label: 'Support', entity: 'Support', icon: 'hand-o-right', params: { sortField: 'nom' } }
+            - { label: 'Tiers', entity: 'Tiers', icon: 'hand-o-right', params: { sortField: 'nom' } }
+            - label: 'Tables secondaires'
+              icon: 'plus-circle'
+              children:
+                  - { entity: 'Nationalite', icon: 'th-list', label: 'Nationalité', params: { sortField: 'nom' }, default: true }
+                  - { entity: 'TypeJeu', icon: 'th-list', label: 'Type jeu', params: { sortField: 'nom' }, default: true }
+                  - { entity: 'TypeTiers', icon: 'th-list', label: 'Type tiers', params: { sortField: 'nom' }, default: true }
+            - { label: 'Utilisateurs', entity: 'User', icon: 'hand-o-right' }       

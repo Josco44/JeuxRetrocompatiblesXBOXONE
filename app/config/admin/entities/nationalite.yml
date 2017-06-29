@@ -1,0 +1,17 @@
+easy_admin:
+    entities:
+        Nationalite:
+            class: JC\SortieJeuVideoBundle\Entity\Nationalite
+            list:
+                fields:
+                    - id
+                    - nom
+            show:
+                fields:
+                    - id
+                    - nom
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - nom
+

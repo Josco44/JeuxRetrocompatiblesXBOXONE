@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+        SortieJeuVideo:
+            class: JC\SortieJeuVideoBundle\Entity\SortieJeuVideo
+            list:
+                fields:
+                    - jeuVideo
+                    - support
+                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+            show:
+                fields:
+                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - jeuVideo
+                    - support                                     
+                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - { property: 'imageFile', type: 'vich_image' }
