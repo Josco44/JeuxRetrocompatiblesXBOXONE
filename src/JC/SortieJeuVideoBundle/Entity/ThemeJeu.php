@@ -35,6 +35,16 @@ class ThemeJeu
      */
     private $noOrdre;
 
+    /**
+     * __toString
+     *
+     * @return string
+     */
+
+    public function __toString()
+    {
+        return $this->nom;
+    }
 
     /**
      * Get id

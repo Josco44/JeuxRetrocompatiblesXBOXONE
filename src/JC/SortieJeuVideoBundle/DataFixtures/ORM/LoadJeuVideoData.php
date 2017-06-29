@@ -12,12 +12,12 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
     public function load(ObjectManager $manager) 
     {
         $jeuVideo01 = new JeuVideo();
-        $jeuVideo01->setNom("Assassin's Creed Syndicate");
-        $jeuVideo01->setDescription("Prenant place dans le Londres de l'époque victorienne, Assassin's Creed Syndicate est un jeu d'action-aventure en monde ouvert. Parmi les nouveautés, on peut notamment citer la possibilité de se déplacer sur des éléments en mouvement (calèche par exemple).");
+        $jeuVideo01->setNom("Assassin's Creed Brotherhood");
+        $jeuVideo01->setDescription("Jeu d'action-aventure en monde ouvert, Assassin's Creed : Brotherhood vous permet d'incarner le Maitre Assassin Ezio à Rome, dans sa lutte contre l'Ordre des Templiers. Dans ce troisième opus de la série, l'esprit du jeu est conservé, et le multijoueur prend désormais une place importante notamment à travers plusieurs modes proposés. Chaque personnage pouvant être incarné possède armes et attaques spécifiques à son style de gameplay.");
         $jeuVideo01->setPublished('1'); 
         $jeuVideo01->addTypesJeu($this->getReference('typeJeu01'));
         $jeuVideo01->addTypesJeu($this->getReference('typeJeu02')); 
-        $jeuVideo01->addTypesJeu($this->getReference('typeJeu03'));  
+        $jeuVideo01->addThemesJeu($this->getReference('themeJeu01'));
         $manager->persist($jeuVideo01);
 
         $manager->flush();
@@ -29,7 +29,7 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 6;
+        return 7;
     }
  
 }

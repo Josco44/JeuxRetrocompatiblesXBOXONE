@@ -7,6 +7,7 @@ easy_admin:
                     - nom
                     - published
                     - typesJeu
+                    - themesJeu
             show:
                 fields:
                     - id
@@ -14,6 +15,7 @@ easy_admin:
                     - description
                     - published
                     - typesJeu
+                    - themesJeu
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
@@ -21,5 +23,6 @@ easy_admin:
                     - published 
                     - description
                     - published
-                    - typesJeu                                    
+                    - typesJeu
+                    - themesJeu                                    
 

@@ -12,25 +12,11 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
     public function load(ObjectManager $manager) 
     {
         $sortieJeuVideo01 = new SortieJeuVideo();
-        $sortieJeuVideo01->setDateSortie(new \DateTime('2015-10-23')); 
+        $sortieJeuVideo01->setDateSortie(new \DateTime('2010-11-17')); 
         $sortieJeuVideo01->setJeuVideo($this->getReference('jeuVideo01')); 
-        $sortieJeuVideo01->setSupport($this->getReference('support01'));
-        $sortieJeuVideo01->setUpdatedAt(new \DateTime('2017-06-16')); 
+        $sortieJeuVideo01->setSupport($this->getReference('support06'));
+        $sortieJeuVideo01->setUpdatedAt(new \DateTime('2017-06-29')); 
         $manager->persist($sortieJeuVideo01);
-
-        $sortieJeuVideo02 = new SortieJeuVideo();
-        $sortieJeuVideo02->setDateSortie(new \DateTime('2015-10-23')); 
-        $sortieJeuVideo02->setJeuVideo($this->getReference('jeuVideo01')); 
-        $sortieJeuVideo02->setSupport($this->getReference('support02'));
-        $sortieJeuVideo02->setUpdatedAt(new \DateTime('2017-06-16')); 
-        $manager->persist($sortieJeuVideo02);
-
-        $sortieJeuVideo03 = new SortieJeuVideo();
-        $sortieJeuVideo03->setDateSortie(new \DateTime('2015-10-23')); 
-        $sortieJeuVideo03->setJeuVideo($this->getReference('jeuVideo01')); 
-        $sortieJeuVideo03->setSupport($this->getReference('support10'));
-        $sortieJeuVideo03->setUpdatedAt(new \DateTime('2017-06-16')); 
-        $manager->persist($sortieJeuVideo03);
 
         $manager->flush();
 
@@ -39,7 +25,7 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 7;
+        return 8;
     }
  
 }

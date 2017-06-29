@@ -31,9 +31,6 @@ class LoadTiersData extends AbstractFixture implements OrderedFixtureInterface {
         $tiers02->setTypeTiers($this->getReference('typeTiers03'));
         $manager->persist($tiers02);        
 
-
-        https://www.ubisoft.com/fr-FR/studio/quebec.aspx
-
         $manager->flush();
 
         $this->addReference('tiers01', $tiers01);
@@ -43,7 +40,7 @@ class LoadTiersData extends AbstractFixture implements OrderedFixtureInterface {
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 5;
+        return 6;
     }
 
 }
