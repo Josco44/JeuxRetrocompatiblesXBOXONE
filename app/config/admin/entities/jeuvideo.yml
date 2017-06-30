@@ -8,6 +8,8 @@ easy_admin:
                     - published
                     - typesJeu
                     - themesJeu
+                    - agePegi
+                    - classificationsPegi
             show:
                 fields:
                     - id
@@ -16,6 +18,8 @@ easy_admin:
                     - published
                     - typesJeu
                     - themesJeu
+                    - agePegi
+                    - classificationsPegi
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
@@ -25,4 +29,6 @@ easy_admin:
                     - published
                     - typesJeu
                     - themesJeu                                    
+                    - agePegi
+                    - classificationsPegi
 

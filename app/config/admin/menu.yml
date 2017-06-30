@@ -1,8 +1,9 @@
 easy_admin:
     design:
         menu:
-            - { label: 'Sortie Jeu Video', entity: 'SortieJeuVideo', icon: 'hand-o-right', params: { sortField: 'dateSortie' } } 
             - { label: 'Jeu Video', entity: 'JeuVideo', icon: 'hand-o-right', params: { sortField: 'nom' } } 
+            - { label: 'Sortie Jeu Video', entity: 'SortieJeuVideo', icon: 'hand-o-right', params: { sortField: 'dateSortie' } } 
+            - { label: 'NoteJeu Video', entity: 'NoteJeuVideo', icon: 'hand-o-right' }
             - { label: 'Support', entity: 'Support', icon: 'hand-o-right', params: { sortField: 'nom' } }
             - { label: 'Tiers', entity: 'Tiers', icon: 'hand-o-right', params: { sortField: 'nom' } }
             - label: 'Tables secondaires'
@@ -12,4 +13,6 @@ easy_admin:
                   - { entity: 'TypeJeu', icon: 'th-list', label: 'Type jeu', params: { sortField: 'nom' }, default: true }
                   - { entity: 'TypeTiers', icon: 'th-list', label: 'Type tiers', params: { sortField: 'nom' }, default: true }
                   - { entity: 'ThemeJeu', icon: 'th-list', label: 'Theme jeu', params: { sortField: 'nom' }, default: true }
+                  - { entity: 'AgePegi', icon: 'th-list', label: 'Age PEGI', params: { sortField: 'age' }, default: true }
+                  - { entity: 'ClassificationPegi', icon: 'th-list', label: 'Classification PEGI', params: { sortField: 'nom' }, default: true }
             - { label: 'Utilisateurs', entity: 'User', icon: 'hand-o-right' }       

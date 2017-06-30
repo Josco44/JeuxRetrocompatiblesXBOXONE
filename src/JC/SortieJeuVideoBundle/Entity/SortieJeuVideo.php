@@ -71,8 +71,25 @@ class SortieJeuVideo
      * @ORM\ManyToOne(targetEntity="JC\SortieJeuVideoBundle\Entity\Support")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $support;        
+    private $support;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="retroXboxOne", type="boolean")
+     */
+    private $retroXboxOne;
+
+    /**
+     * __toString
+     *
+     * @return string
+     */
+
+    public function __toString()
+    {
+        return $this->jeuVideo->getNom()." - ".$this->support->getNom();
+    }            
 
     /**
      * Get id
@@ -297,5 +314,29 @@ class SortieJeuVideo
     public function getJeuVideo()
     {
         return $this->jeuVideo;
+    }
+
+    /**
+     * Set retroXboxOne
+     *
+     * @param boolean $retroXboxOne
+     *
+     * @return SortieJeuVideo
+     */
+    public function setRetroXboxOne($retroXboxOne)
+    {
+        $this->retroXboxOne = $retroXboxOne;
+
+        return $this;
+    }
+
+    /**
+     * Get retroXboxOne
+     *
+     * @return boolean
+     */
+    public function getRetroXboxOne()
+    {
+        return $this->retroXboxOne;
     }
 }

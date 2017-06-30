@@ -91,6 +91,14 @@ class LoadSupportData extends AbstractFixture implements OrderedFixtureInterface
         $support10->setPublished('1');
         $manager->persist($support10);
 
+        $support11 = new Support();
+        $support11->setNom('RETRO XBOX ONE');
+        $support11->setNoOrdre(11);
+        $support11->setDatesortie(new \DateTime('1981-01-01'));
+        $support11->setDescription('RETRO XBOX ONE');
+        $support11->setPublished('0');
+        $manager->persist($support11);        
+
         $manager->flush();
 
         $this->addReference('support01', $support01);
@@ -103,6 +111,7 @@ class LoadSupportData extends AbstractFixture implements OrderedFixtureInterface
         $this->addReference('support08', $support08);
         $this->addReference('support09', $support09);
         $this->addReference('support10', $support10);
+        $this->addReference('support11', $support11);
 
     }
 

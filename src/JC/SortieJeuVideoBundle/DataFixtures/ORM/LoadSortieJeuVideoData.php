@@ -15,7 +15,9 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
         $sortieJeuVideo01->setDateSortie(new \DateTime('2010-11-17')); 
         $sortieJeuVideo01->setJeuVideo($this->getReference('jeuVideo01')); 
         $sortieJeuVideo01->setSupport($this->getReference('support06'));
-        $sortieJeuVideo01->setUpdatedAt(new \DateTime('2017-06-29')); 
+        $sortieJeuVideo01->setImage('AssassinsCreedBrotherHood.png');
+        $sortieJeuVideo01->setUpdatedAt(new \DateTime('now'));
+        $sortieJeuVideo01->setRetroXboxOne('1'); 
         $manager->persist($sortieJeuVideo01);
 
         $manager->flush();
@@ -25,7 +27,7 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 8;
+        return 10;
     }
  
 }

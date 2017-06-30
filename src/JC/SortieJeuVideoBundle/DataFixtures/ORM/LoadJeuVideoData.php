@@ -18,6 +18,8 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
         $jeuVideo01->addTypesJeu($this->getReference('typeJeu01'));
         $jeuVideo01->addTypesJeu($this->getReference('typeJeu02')); 
         $jeuVideo01->addThemesJeu($this->getReference('themeJeu01'));
+        $jeuVideo01->setAgePegi($this->getReference('agePegi01'));
+        $jeuVideo01->addClassificationsPegi($this->getReference('classificationPegi01'));
         $manager->persist($jeuVideo01);
 
         $manager->flush();
@@ -29,7 +31,7 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 7;
+        return 9;
     }
  
 }

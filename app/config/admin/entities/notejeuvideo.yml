@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+        NoteJeuVideo:
+            class: JC\SortieJeuVideoBundle\Entity\NoteJeuVideo
+            list:
+                fields:
+                    - sortieJeuVideo
+                    - tiers
+                    - note
+            show:
+                fields:
+                    - id
+                    - sortieJeuVideo
+                    - tiers
+                    - note
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - sortieJeuVideo
+                    - tiers                                     
+                    - note

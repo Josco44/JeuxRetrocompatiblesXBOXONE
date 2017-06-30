@@ -1,0 +1,17 @@
+easy_admin:
+    entities:
+        ClassificationPegi:
+            class: JC\SortieJeuVideoBundle\Entity\ClassificationPegi
+            list:
+                fields:
+                    - nom
+                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+            show:
+                fields:
+                    - nom
+                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+            form:
+                fields:
+                    - { property: 'id', type_options: { 'disabled': true } }
+                    - nom
+                    - { property: 'imageFile', type: 'vich_image' }

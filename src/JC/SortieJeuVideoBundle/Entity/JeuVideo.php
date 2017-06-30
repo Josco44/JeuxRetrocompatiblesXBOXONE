@@ -50,8 +50,17 @@ class JeuVideo
     /**
      * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ThemeJeu", cascade={"persist"})
      */
-    private $themesJeu;  
+    private $themesJeu;
 
+    /**
+     * @ORM\OneToOne(targetEntity="JC\SortieJeuVideoBundle\Entity\AgePegi", cascade={"persist"})
+     */
+    private $agePegi;
+
+   /**
+     * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ClassificationPegi", cascade={"persist"})
+     */
+    private $classificationsPegi;      
 
     /**
      * __toString
@@ -151,8 +160,8 @@ class JeuVideo
     public function __construct()
     {
         $this->typesJeu = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->tiersDeveloppeur = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->tiersEditeur = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->themesJeu = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->classificationsPegi = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -187,74 +196,6 @@ class JeuVideo
     public function getTypesJeu()
     {
         return $this->typesJeu;
-    }
-
-    /**
-     * Add tiersDeveloppeur
-     *
-     * @param \JC\SortieJeuVideoBundle\Entity\Tiers $tiersDeveloppeur
-     *
-     * @return JeuVideo
-     */
-    public function addTiersDeveloppeur(\JC\SortieJeuVideoBundle\Entity\Tiers $tiersDeveloppeur)
-    {
-        $this->tiersDeveloppeur[] = $tiersDeveloppeur;
-
-        return $this;
-    }
-
-    /**
-     * Remove tiersDeveloppeur
-     *
-     * @param \JC\SortieJeuVideoBundle\Entity\Tiers $tiersDeveloppeur
-     */
-    public function removeTiersDeveloppeur(\JC\SortieJeuVideoBundle\Entity\Tiers $tiersDeveloppeur)
-    {
-        $this->tiersDeveloppeur->removeElement($tiersDeveloppeur);
-    }
-
-    /**
-     * Get tiersDeveloppeur
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTiersDeveloppeur()
-    {
-        return $this->tiersDeveloppeur;
-    }
-
-    /**
-     * Add tiersEditeur
-     *
-     * @param \JC\SortieJeuVideoBundle\Entity\Tiers $tiersEditeur
-     *
-     * @return JeuVideo
-     */
-    public function addTiersEditeur(\JC\SortieJeuVideoBundle\Entity\Tiers $tiersEditeur)
-    {
-        $this->tiersEditeur[] = $tiersEditeur;
-
-        return $this;
-    }
-
-    /**
-     * Remove tiersEditeur
-     *
-     * @param \JC\SortieJeuVideoBundle\Entity\Tiers $tiersEditeur
-     */
-    public function removeTiersEditeur(\JC\SortieJeuVideoBundle\Entity\Tiers $tiersEditeur)
-    {
-        $this->tiersEditeur->removeElement($tiersEditeur);
-    }
-
-    /**
-     * Get tiersEditeur
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTiersEditeur()
-    {
-        return $this->tiersEditeur;
     }
 
     /**
@@ -362,5 +303,63 @@ class JeuVideo
     public function getThemesJeu()
     {
         return $this->themesJeu;
+    }
+
+    /**
+     * Set agePegi
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\AgePegi $agePegi
+     *
+     * @return JeuVideo
+     */
+    public function setAgePegi(\JC\SortieJeuVideoBundle\Entity\AgePegi $agePegi = null)
+    {
+        $this->agePegi = $agePegi;
+
+        return $this;
+    }
+
+    /**
+     * Get agePegi
+     *
+     * @return \JC\SortieJeuVideoBundle\Entity\AgePegi
+     */
+    public function getAgePegi()
+    {
+        return $this->agePegi;
+    }
+
+    /**
+     * Add classificationsPegi
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\ClassificationPegi $classificationsPegi
+     *
+     * @return JeuVideo
+     */
+    public function addClassificationsPegi(\JC\SortieJeuVideoBundle\Entity\ClassificationPegi $classificationsPegi)
+    {
+        $this->classificationsPegi[] = $classificationsPegi;
+
+        return $this;
+    }
+
+    /**
+     * Remove classificationsPegi
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\ClassificationPegi $classificationsPegi
+     */
+    public function removeClassificationsPegi(\JC\SortieJeuVideoBundle\Entity\ClassificationPegi $classificationsPegi)
+    {
+        $this->classificationsPegi->removeElement($classificationsPegi);
+    }
+
+    /**
+     * Get classificationsPegi
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClassificationsPegi()
+    {
+        return $this->classificationsPegi;
     }
 }

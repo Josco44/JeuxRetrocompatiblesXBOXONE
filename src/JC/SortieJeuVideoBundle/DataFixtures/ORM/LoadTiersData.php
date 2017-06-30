@@ -40,7 +40,7 @@ class LoadTiersData extends AbstractFixture implements OrderedFixtureInterface {
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 6;
+        return 8;
     }
 
 }
