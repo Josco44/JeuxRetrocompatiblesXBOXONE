@@ -4,10 +4,10 @@ namespace JC\SortieJeuVideoBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class RetroXboxOneController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('JCSortieJeuVideoBundle:Default:index.html.twig');
+        return $this->render('JCSortieJeuVideoBundle:RetroXboxOne:index.html.twig');
     }
 }

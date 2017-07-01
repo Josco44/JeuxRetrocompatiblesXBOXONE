@@ -22,6 +22,8 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
 
         $manager->flush();
 
+        $this->addReference('sortieJeuVideo01', $sortieJeuVideo01);
+
     }
 
     public function getOrder()

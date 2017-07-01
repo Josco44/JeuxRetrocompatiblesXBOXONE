@@ -81,6 +81,13 @@ class SortieJeuVideo
     private $retroXboxOne;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateSortieRetroXboxOne", type="date", nullable=true)
+     */
+    private $dateSortieRetroXboxOne;    
+
+    /**
      * __toString
      *
      * @return string
@@ -338,5 +345,29 @@ class SortieJeuVideo
     public function getRetroXboxOne()
     {
         return $this->retroXboxOne;
+    }
+
+    /**
+     * Set dateSortieRetroXboxOne
+     *
+     * @param \DateTime $dateSortieRetroXboxOne
+     *
+     * @return SortieJeuVideo
+     */
+    public function setDateSortieRetroXboxOne($dateSortieRetroXboxOne)
+    {
+        $this->dateSortieRetroXboxOne = $dateSortieRetroXboxOne;
+
+        return $this;
+    }
+
+    /**
+     * Get dateSortieRetroXboxOne
+     *
+     * @return \DateTime
+     */
+    public function getDateSortieRetroXboxOne()
+    {
+        return $this->dateSortieRetroXboxOne;
     }
 }

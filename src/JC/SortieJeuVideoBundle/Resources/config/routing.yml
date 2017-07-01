@@ -1,3 +1,3 @@
 jc_sortie_jeu_video_homepage:
-    path:     /
-    defaults: { _controller: JCSortieJeuVideoBundle:Default:index }
+    path:     /homepage
+    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:index }
