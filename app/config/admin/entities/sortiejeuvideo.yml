@@ -11,14 +11,23 @@ easy_admin:
                     - retroXboxOne
             show:
                 fields:
+                    - id 
+                    - jeuVideo
+                    - support
                     - { property: 'dateSortie', format: 'j / M / Y' }
                     - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
                     - retroXboxOne
+                    - { property: 'dateSortieRetroXboxOne', format: 'j / M / Y' }
+                    - tiersDeveloppeur
+                    - tiersEditeur                    
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
                     - jeuVideo
                     - support                                     
-                    - { property: 'dateSortie', format: 'j / M / Y' }
+                    - { property: 'dateSortie', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
                     - { property: 'imageFile', type: 'vich_image' }
                     - retroXboxOne
+                    - { property: 'dateSortieRetroXboxOne', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
+                    - tiersDeveloppeur
+                    - tiersEditeur

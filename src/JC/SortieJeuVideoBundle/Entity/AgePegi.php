@@ -50,6 +50,12 @@ class AgePegi
     private $updatedAt;
 
     /**
+     * @ORM\OneToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\JeuVideo", mappedBy="agePegi")
+     */
+    private $jeuVideos;
+
+
+    /**
      * __toString
      *
      * @return string
@@ -158,5 +164,46 @@ class AgePegi
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->jeuVideos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add jeuVideo
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\JeuVideo $jeuVideo
+     *
+     * @return AgePegi
+     */
+    public function addJeuVideo(\JC\SortieJeuVideoBundle\Entity\JeuVideo $jeuVideo)
+    {
+        $this->jeuVideos[] = $jeuVideo;
+
+        return $this;
+    }
+
+    /**
+     * Remove jeuVideo
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\JeuVideo $jeuVideo
+     */
+    public function removeJeuVideo(\JC\SortieJeuVideoBundle\Entity\JeuVideo $jeuVideo)
+    {
+        $this->jeuVideos->removeElement($jeuVideo);
+    }
+
+    /**
+     * Get jeuVideos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getJeuVideos()
+    {
+        return $this->jeuVideos;
     }
 }

@@ -18,11 +18,24 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
         $sortieJeuVideo01->setImage('AssassinsCreedBrotherHood.png');
         $sortieJeuVideo01->setUpdatedAt(new \DateTime('now'));
         $sortieJeuVideo01->setRetroXboxOne('1'); 
+        $sortieJeuVideo01->setdateSortieRetroXboxOne(new \DateTime('2017-03-24'));
         $manager->persist($sortieJeuVideo01);
+
+        $sortieJeuVideo02 = new SortieJeuVideo();
+        $sortieJeuVideo02->setDateSortie(new \DateTime('2006-03-24')); 
+        $sortieJeuVideo02->setJeuVideo($this->getReference('jeuVideo02')); 
+        $sortieJeuVideo02->setSupport($this->getReference('support06'));
+        $sortieJeuVideo02->setImage('Oblivion.jpg');
+        $sortieJeuVideo02->setUpdatedAt(new \DateTime('now'));
+        $sortieJeuVideo02->setRetroXboxOne('1'); 
+        $sortieJeuVideo02->setdateSortieRetroXboxOne(new \DateTime('2016-11-29'));
+        $manager->persist($sortieJeuVideo02);
+
 
         $manager->flush();
 
         $this->addReference('sortieJeuVideo01', $sortieJeuVideo01);
+        $this->addReference('sortieJeuVideo02', $sortieJeuVideo02);
 
     }
 

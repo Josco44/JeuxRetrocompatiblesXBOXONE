@@ -53,9 +53,10 @@ class JeuVideo
     private $themesJeu;
 
     /**
-     * @ORM\OneToOne(targetEntity="JC\SortieJeuVideoBundle\Entity\AgePegi", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="JC\SortieJeuVideoBundle\Entity\AgePegi", inversedBy="jeuVideos")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $agePegi;
+    private $agePegi;    
 
    /**
      * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ClassificationPegi", cascade={"persist"})

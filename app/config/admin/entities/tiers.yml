@@ -28,6 +28,6 @@ easy_admin:
                     - adresse
                     - site
                     - published
-                    - { property: 'dateCreation', format: 'j / M / Y' }
+                    - { property: 'dateCreation', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
                     - nationalite
                     - typeTiers

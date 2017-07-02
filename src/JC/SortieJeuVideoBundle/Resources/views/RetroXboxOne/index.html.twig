@@ -2,4 +2,32 @@
 {% block title %}{{ parent() }} - Accueil{% endblock %}
 {% block body %}  
 
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <div class="panel panel-default">
+          <div class="panel-heading">Ajoutés récemment</div>
+          <div class="panel-body">
+            <div class="row">
+              {% for listLastExitGame in listLastExitGames %}
+                <div class="col-sm-6 col-md-2">
+                  <div class="thumbnail">
+                    <img src="{{ vich_uploader_asset(listLastExitGame, 'imageFile') }}" alt="{{ listLastExitGame.jeuvideo.nom }}" />
+                    <div class="caption">
+                      <h5>{{ listLastExitGame.jeuvideo.nom }}</h5>
+                      <p>...</p>
+                      <p>
+                        <a href="#" class="btn btn-default" role="button">En savoir plus</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}  
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}

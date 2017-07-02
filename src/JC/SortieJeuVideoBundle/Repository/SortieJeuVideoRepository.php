@@ -10,4 +10,16 @@ namespace JC\SortieJeuVideoBundle\Repository;
  */
 class SortieJeuVideoRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function findLastExitGame($limit)
+	{
+
+		$qb = $this->createQueryBuilder('a');
+
+		$qb->setMaxResults($limit);
+
+		return $qb->getQuery()->getResult(); 
+
+	}
+
 }

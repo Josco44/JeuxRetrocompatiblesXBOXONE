@@ -22,9 +22,21 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
         $jeuVideo01->addClassificationsPegi($this->getReference('classificationPegi01'));
         $manager->persist($jeuVideo01);
 
+        $jeuVideo02 = new JeuVideo();
+        $jeuVideo02->setNom("The Elder Scrolls IV : Oblivion");
+        $jeuVideo02->setDescription("The Elder Scrolls IV : Oblivion est un jeu de rôle sur Xbox 360. L'apparition grandissante et apocalyptique des portes d'Oblivion menace le sort de ce monde féérique. A vous de devenir le héros de tous et de partir à l'aventure pour accomplir les nombreuses quêtes que réserve le titre. Vous découvrirez des donjons et des trésors cachés sur la très vaste carte du soft. La progression suit une difficulté pleinement réglable et le jeu intègre un éditeur de niveaux très puissant.");
+        $jeuVideo02->setPublished('1'); 
+        $jeuVideo02->addTypesJeu($this->getReference('typeJeu05'));
+        $jeuVideo02->addThemesJeu($this->getReference('themeJeu02'));
+        $jeuVideo02->addThemesJeu($this->getReference('themeJeu03'));
+        $jeuVideo02->setAgePegi($this->getReference('agePegi04'));
+        $jeuVideo02->addClassificationsPegi($this->getReference('classificationPegi08'));
+        $manager->persist($jeuVideo02);
+
         $manager->flush();
 
         $this->addReference('jeuVideo01', $jeuVideo01);
+        $this->addReference('jeuVideo02', $jeuVideo02);
 
     }
 
