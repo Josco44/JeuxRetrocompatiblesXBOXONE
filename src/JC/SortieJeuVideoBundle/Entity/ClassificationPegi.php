@@ -38,7 +38,7 @@ class ClassificationPegi
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="jeuvideo_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="classificationpegi_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -99,7 +99,7 @@ class ClassificationPegi
      *
      * @param string $image
      *
-     * @return JeuVideo
+     * @return ClassificationPegi
      */
     public function setImage($image)
     {

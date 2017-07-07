@@ -6,12 +6,15 @@ easy_admin:
                 fields:
                     - id
                     - nom
+                    - { property: 'image', type: 'image', base_path: '%app.path.nationalite_images%' }
             show:
                 fields:
                     - id
                     - nom
+                    - { property: 'image', type: 'image', base_path: '%app.path.nationalite_images%' }
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
                     - nom
+                    - { property: 'imageFile', type: 'vich_image' }
 

@@ -3,12 +3,15 @@
 namespace JC\SortieJeuVideoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Tiers
  *
  * @ORM\Table(name="tiers")
  * @ORM\Entity(repositoryClass="JC\SortieJeuVideoBundle\Repository\TiersRepository")
+ * @Vich\Uploadable
  */
 class Tiers
 {
@@ -38,9 +41,9 @@ class Tiers
     /**
      * @var string
      *
-     * @ORM\Column(name="site", type="string", length=255)
+     * @ORM\Column(name="siteWeb", type="string", length=255)
      */
-    private $site;
+    private $siteWeb;
 
     /**
      * @var bool
@@ -50,11 +53,11 @@ class Tiers
     private $published;
 
     /**
-     * @var \DateTime
+     * @var int
      *
-     * @ORM\Column(name="dateCreation", type="date")
+     * @ORM\Column(name="anneeCreation", type="integer")
      */
-    private $dateCreation;
+    private $anneeCreation;
 
     /**
      * @ORM\ManyToOne(targetEntity="JC\SortieJeuVideoBundle\Entity\Nationalite")
@@ -66,7 +69,29 @@ class Tiers
      * @ORM\ManyToOne(targetEntity="JC\SortieJeuVideoBundle\Entity\TypeTiers")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $typeTiers;    
+
+    /**
+     * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\TypeTiers", cascade={"persist"})
+     */    
+    private $typeTiers;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="tiers_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * __toString
@@ -186,30 +211,6 @@ class Tiers
     }
 
     /**
-     * Set dateCreation
-     *
-     * @param \DateTime $dateCreation
-     *
-     * @return Tiers
-     */
-    public function setDateCreation($dateCreation)
-    {
-        $this->dateCreation = $dateCreation;
-
-        return $this;
-    }
-
-    /**
-     * Get dateCreation
-     *
-     * @return \DateTime
-     */
-    public function getDateCreation()
-    {
-        return $this->dateCreation;
-    }
-
-    /**
      * Set nationalite
      *
      * @param \JC\SortieJeuVideoBundle\Entity\Nationalite $nationalite
@@ -233,27 +234,160 @@ class Tiers
         return $this->nationalite;
     }
 
+    
     /**
-     * Set typeTiers
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->typeTiers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add typeTier
      *
-     * @param \JC\SortieJeuVideoBundle\Entity\typeTiers $typeTiers
+     * @param \JC\SortieJeuVideoBundle\Entity\TypeTiers $typeTier
      *
      * @return Tiers
      */
-    public function setTypeTiers(\JC\SortieJeuVideoBundle\Entity\typeTiers $typeTiers)
+    public function addTypeTier(\JC\SortieJeuVideoBundle\Entity\TypeTiers $typeTier)
     {
-        $this->typeTiers = $typeTiers;
+        $this->typeTiers[] = $typeTier;
 
         return $this;
     }
 
     /**
+     * Remove typeTier
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\TypeTiers $typeTier
+     */
+    public function removeTypeTier(\JC\SortieJeuVideoBundle\Entity\TypeTiers $typeTier)
+    {
+        $this->typeTiers->removeElement($typeTier);
+    }
+
+    /**
      * Get typeTiers
      *
-     * @return \JC\JeuxVideoBundle\Entity\typeTiers
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTypeTiers()
     {
         return $this->typeTiers;
+    }
+
+    /**
+     * Set anneeCreation
+     *
+     * @param integer $anneeCreation
+     *
+     * @return Tiers
+     */
+    public function setAnneeCreation($anneeCreation)
+    {
+        $this->anneeCreation = $anneeCreation;
+
+        return $this;
+    }
+
+    /**
+     * Get anneeCreation
+     *
+     * @return integer
+     */
+    public function getAnneeCreation()
+    {
+        return $this->anneeCreation;
+    }
+
+    /**
+     * Set siteWeb
+     *
+     * @param string $siteWeb
+     *
+     * @return Tiers
+     */
+    public function setSiteWeb($siteWeb)
+    {
+        $this->siteWeb = $siteWeb;
+
+        return $this;
+    }
+
+    /**
+     * Get siteWeb
+     *
+     * @return string
+     */
+    public function getSiteWeb()
+    {
+        return $this->siteWeb;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Tiers
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }        
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Tiers
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

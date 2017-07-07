@@ -4,11 +4,13 @@ easy_admin:
             class: JC\SortieJeuVideoBundle\Entity\SortieJeuVideo
             list:
                 fields:
+                    - id
                     - jeuVideo
                     - support
                     - { property: 'dateSortie', format: 'j / M / Y' }
                     - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
                     - retroXboxOne
+                    - enBoite
             show:
                 fields:
                     - id 
@@ -17,6 +19,7 @@ easy_admin:
                     - { property: 'dateSortie', format: 'j / M / Y' }
                     - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
                     - retroXboxOne
+                    - enBoite
                     - { property: 'dateSortieRetroXboxOne', format: 'j / M / Y' }
                     - tiersDeveloppeur
                     - tiersEditeur                    
@@ -28,6 +31,7 @@ easy_admin:
                     - { property: 'dateSortie', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
                     - { property: 'imageFile', type: 'vich_image' }
                     - retroXboxOne
+                    - enBoite
                     - { property: 'dateSortieRetroXboxOne', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
                     - tiersDeveloppeur
                     - tiersEditeur

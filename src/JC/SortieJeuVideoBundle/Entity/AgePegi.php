@@ -38,7 +38,7 @@ class AgePegi
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="jeuvideo_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="agepegi_images", fileNameProperty="image")
      * @var File
      */
     private $imageFile;
@@ -105,7 +105,7 @@ class AgePegi
      *
      * @param string $image
      *
-     * @return JeuVideo
+     * @return AgePegi
      */
     public function setImage($image)
     {

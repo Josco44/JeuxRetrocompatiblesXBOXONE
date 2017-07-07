@@ -11,6 +11,7 @@ class LoadTiersData extends AbstractFixture implements OrderedFixtureInterface {
  
     public function load(ObjectManager $manager) 
     {
+        /*
         $tiers01 = new Tiers();
         $tiers01->setNom('Ubisoft'); 
         $tiers01->setAdresse('28 rue Armand Carrel 93100 Montreuil'); 
@@ -61,8 +62,6 @@ class LoadTiersData extends AbstractFixture implements OrderedFixtureInterface {
         $tiers05->setTypeTiers($this->getReference('typeTiers04'));
         $manager->persist($tiers05);                
 
-
-
         $manager->flush();
 
         $this->addReference('tiers01', $tiers01);
@@ -70,13 +69,13 @@ class LoadTiersData extends AbstractFixture implements OrderedFixtureInterface {
         $this->addReference('tiers03', $tiers03);
         $this->addReference('tiers04', $tiers04);
         $this->addReference('tiers05', $tiers05);
-
+        */
     }
 
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 8;
+        return 9;
     }
 
 }

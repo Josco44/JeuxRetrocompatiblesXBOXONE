@@ -11,23 +11,26 @@ easy_admin:
                     - published
                     - nationalite
                     - typeTiers
+                    - { property: 'image', type: 'image', base_path: '%app.path.tiers_images%' }
             show:
                 fields:
                     - id
                     - nom
                     - adresse
-                    - site
+                    - siteWeb
                     - published
-                    - { property: 'dateCreation', format: 'j / M / Y' }
+                    - anneeCreation
                     - nationalite
                     - typeTiers
+                    - { property: 'image', type: 'image', base_path: '%app.path.tiers_images%' }
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
                     - nom
                     - adresse
-                    - site
+                    - siteWeb
                     - published
-                    - { property: 'dateCreation', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
+                    - anneeCreation
                     - nationalite
                     - typeTiers
+                    - { property: 'imageFile', type: 'vich_image' }

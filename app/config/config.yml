@@ -10,6 +10,10 @@ parameters:
     locale: fr
     #app.path.jeuvideo_images: /uploads/images/jeuvideo
     app.path.jeuvideo_images: /sortiejeuvideo/web/uploads/images/jeuvideo
+    app.path.nationalite_images: /sortiejeuvideo/web/uploads/images/nationalite
+    app.path.agepegi_images: /sortiejeuvideo/web/uploads/images/agepegi
+    app.path.classificationpegi_images: /sortiejeuvideo/web/uploads/images/classificationpegi
+    app.path.tiers_images: /sortiejeuvideo/web/uploads/images/tiers
 
 framework:
     #esi: ~
@@ -78,6 +82,18 @@ vich_uploader:
         jeuvideo_images:
             uri_prefix:         '%app.path.jeuvideo_images%'
             upload_destination: '%kernel.root_dir%/../web/uploads/images/jeuvideo'
+        nationalite_images:
+            uri_prefix:         '%app.path.nationalite_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/nationalite'
+        agepegi_images:
+            uri_prefix:         '%app.path.agepegi_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/agepegi'
+        classificationpegi_images:
+            uri_prefix:         '%app.path.classificationpegi_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/classificationpegi'
+        tiers_images:
+            uri_prefix:         '%app.path.tiers_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/tiers'
 
 fos_user:
     db_driver: orm

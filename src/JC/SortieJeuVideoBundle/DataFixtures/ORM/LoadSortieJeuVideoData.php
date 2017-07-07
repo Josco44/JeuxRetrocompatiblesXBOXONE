@@ -11,6 +11,7 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
  
     public function load(ObjectManager $manager) 
     {
+        /*
         $sortieJeuVideo01 = new SortieJeuVideo();
         $sortieJeuVideo01->setDateSortie(new \DateTime('2010-11-17')); 
         $sortieJeuVideo01->setJeuVideo($this->getReference('jeuVideo01')); 
@@ -36,13 +37,14 @@ class LoadSortieJeuVideoData extends AbstractFixture implements OrderedFixtureIn
 
         $this->addReference('sortieJeuVideo01', $sortieJeuVideo01);
         $this->addReference('sortieJeuVideo02', $sortieJeuVideo02);
+        */
 
     }
 
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 10;
+        return 11;
     }
  
 }

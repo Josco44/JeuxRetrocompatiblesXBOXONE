@@ -11,6 +11,7 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
  
     public function load(ObjectManager $manager) 
     {
+        /*
         $jeuVideo01 = new JeuVideo();
         $jeuVideo01->setNom("Assassin's Creed Brotherhood");
         $jeuVideo01->setDescription("Jeu d'action-aventure en monde ouvert, Assassin's Creed : Brotherhood vous permet d'incarner le Maitre Assassin Ezio à Rome, dans sa lutte contre l'Ordre des Templiers. Dans ce troisième opus de la série, l'esprit du jeu est conservé, et le multijoueur prend désormais une place importante notamment à travers plusieurs modes proposés. Chaque personnage pouvant être incarné possède armes et attaques spécifiques à son style de gameplay.");
@@ -37,13 +38,14 @@ class LoadJeuVideoData extends AbstractFixture implements OrderedFixtureInterfac
 
         $this->addReference('jeuVideo01', $jeuVideo01);
         $this->addReference('jeuVideo02', $jeuVideo02);
+        */
 
     }
 
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 9;
+        return 10;
     }
  
 }

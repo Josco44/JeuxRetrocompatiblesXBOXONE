@@ -88,6 +88,13 @@ class SortieJeuVideo
     private $dateSortieRetroXboxOne;    
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="enBoite", type="boolean")
+     */
+    private $enBoite;    
+
+    /**
      * __toString
      *
      * @return string
@@ -137,7 +144,7 @@ class SortieJeuVideo
      *
      * @param string $image
      *
-     * @return JeuVideo
+     * @return SortieJeuVideo
      */
     public function setImage($image)
     {
@@ -369,5 +376,29 @@ class SortieJeuVideo
     public function getDateSortieRetroXboxOne()
     {
         return $this->dateSortieRetroXboxOne;
+    }
+
+    /**
+     * Set enBoite
+     *
+     * @param boolean $enBoite
+     *
+     * @return SortieJeuVideo
+     */
+    public function setEnBoite($enBoite)
+    {
+        $this->enBoite = $enBoite;
+
+        return $this;
+    }
+
+    /**
+     * Get enBoite
+     *
+     * @return boolean
+     */
+    public function getEnBoite()
+    {
+        return $this->enBoite;
     }
 }

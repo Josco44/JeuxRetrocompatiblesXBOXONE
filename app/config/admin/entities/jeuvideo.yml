@@ -15,6 +15,7 @@ easy_admin:
                     - id
                     - nom
                     - description
+                    - siteWeb
                     - published
                     - typesJeu
                     - themesJeu
@@ -26,6 +27,7 @@ easy_admin:
                     - nom
                     - published 
                     - description
+                    - siteWeb
                     - published
                     - typesJeu
                     - themesJeu                                    

@@ -16,11 +16,11 @@ class LoadTypeTiersData extends AbstractFixture implements OrderedFixtureInterfa
         $manager->persist($typeTiers01);
 
         $typeTiers02 = new TypeTiers();
-        $typeTiers02->setNom('Editeur');
+        $typeTiers02->setNom('Developpeur');
         $manager->persist($typeTiers02);
 
         $typeTiers03 = new TypeTiers();
-        $typeTiers03->setNom('Developpeur');
+        $typeTiers03->setNom('Editeur');
         $manager->persist($typeTiers03);
 
         $typeTiers04 = new TypeTiers();

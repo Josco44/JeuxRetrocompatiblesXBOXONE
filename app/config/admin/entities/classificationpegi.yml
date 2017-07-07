@@ -4,12 +4,14 @@ easy_admin:
             class: JC\SortieJeuVideoBundle\Entity\ClassificationPegi
             list:
                 fields:
+                    - id
                     - nom
-                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.classificationpegi_images%' }
             show:
                 fields:
+                    - id
                     - nom
-                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.classificationpegi_images%' }
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }

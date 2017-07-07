@@ -43,6 +43,13 @@ class JeuVideo
     private $published;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="siteWeb", type="string", length=255)
+     */
+    private $siteWeb;    
+
+    /**
      * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\TypeJeu", cascade={"persist"})
      */
     private $typesJeu;  
@@ -58,10 +65,16 @@ class JeuVideo
      */
     private $agePegi;    
 
-   /**
+    /**
      * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ClassificationPegi", cascade={"persist"})
      */
-    private $classificationsPegi;      
+    private $classificationsPegi;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ModeJeu", cascade={"persist"})
+     */
+    private $modesJeu;
+
 
     /**
      * __toString
@@ -362,5 +375,63 @@ class JeuVideo
     public function getClassificationsPegi()
     {
         return $this->classificationsPegi;
+    }
+
+    /**
+     * Add modesJeu
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\ModeJeu $modesJeu
+     *
+     * @return JeuVideo
+     */
+    public function addModesJeu(\JC\SortieJeuVideoBundle\Entity\ModeJeu $modesJeu)
+    {
+        $this->modesJeu[] = $modesJeu;
+
+        return $this;
+    }
+
+    /**
+     * Remove modesJeu
+     *
+     * @param \JC\SortieJeuVideoBundle\Entity\ModeJeu $modesJeu
+     */
+    public function removeModesJeu(\JC\SortieJeuVideoBundle\Entity\ModeJeu $modesJeu)
+    {
+        $this->modesJeu->removeElement($modesJeu);
+    }
+
+    /**
+     * Get modesJeu
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getModesJeu()
+    {
+        return $this->modesJeu;
+    }
+
+    /**
+     * Set siteWeb
+     *
+     * @param string $siteWeb
+     *
+     * @return JeuVideo
+     */
+    public function setSiteWeb($siteWeb)
+    {
+        $this->siteWeb = $siteWeb;
+
+        return $this;
+    }
+
+    /**
+     * Get siteWeb
+     *
+     * @return string
+     */
+    public function getSiteWeb()
+    {
+        return $this->siteWeb;
     }
 }

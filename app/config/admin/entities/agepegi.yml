@@ -4,12 +4,14 @@ easy_admin:
             class: JC\SortieJeuVideoBundle\Entity\AgePegi
             list:
                 fields:
+                    - id
                     - age
-                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.agepegi_images%' }
             show:
                 fields:
+                    - id
                     - age
-                    - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+                    - { property: 'image', type: 'image', base_path: '%app.path.agepegi_images%' }
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }

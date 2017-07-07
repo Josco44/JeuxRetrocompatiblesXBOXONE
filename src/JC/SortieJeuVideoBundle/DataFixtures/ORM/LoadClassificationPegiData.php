@@ -11,33 +11,34 @@ class LoadClassificationPegiData extends AbstractFixture implements OrderedFixtu
  
     public function load(ObjectManager $manager) 
     {
+
         $classificationPegi01 = new ClassificationPegi();
-        $classificationPegi01->setNom('Langage grossier');
-        $classificationPegi01->setImage('LangageGrossier.gif');
+        $classificationPegi01->setNom('Discrimination');
+        $classificationPegi01->setImage('Discrimination.gif');
         $classificationPegi01->setUpdatedAt(new \DateTime('now'));
         $manager->persist($classificationPegi01);
 
         $classificationPegi02 = new ClassificationPegi();
-        $classificationPegi02->setNom('En ligne');
-        $classificationPegi02->setImage('EnLigne.gif');
+        $classificationPegi02->setNom('Drogue');
+        $classificationPegi02->setImage('Drogue.gif');
         $classificationPegi02->setUpdatedAt(new \DateTime('now'));
         $manager->persist($classificationPegi02);
 
         $classificationPegi03 = new ClassificationPegi();
-        $classificationPegi03->setNom('Discrimination');
-        $classificationPegi03->setImage('Discrimination.gif');
+        $classificationPegi03->setNom('En ligne');
+        $classificationPegi03->setImage('EnLigne.gif');
         $classificationPegi03->setUpdatedAt(new \DateTime('now'));
         $manager->persist($classificationPegi03);
 
         $classificationPegi04 = new ClassificationPegi();
-        $classificationPegi04->setNom('Drogue');
-        $classificationPegi04->setImage('Drogue.gif');
+        $classificationPegi04->setNom('Jeu de hasard');
+        $classificationPegi04->setImage('JeuDeHasard.gif');
         $classificationPegi04->setUpdatedAt(new \DateTime('now'));
         $manager->persist($classificationPegi04);
 
         $classificationPegi05 = new ClassificationPegi();
-        $classificationPegi05->setNom('Jeu de hasard');
-        $classificationPegi05->setImage('JeuDeHasard.gif');
+        $classificationPegi05->setNom('Langage grossier');
+        $classificationPegi05->setImage('LangageGrossier.gif');
         $classificationPegi05->setUpdatedAt(new \DateTime('now'));
         $manager->persist($classificationPegi05);
 

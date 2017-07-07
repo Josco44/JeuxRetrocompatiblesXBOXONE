@@ -11,6 +11,7 @@ class LoadNoteJeuVideoData extends AbstractFixture implements OrderedFixtureInte
  
     public function load(ObjectManager $manager) 
     {
+        /*
         $noteJeuVideo01 = new NoteJeuVideo();
         $noteJeuVideo01->setNote(90);
         $noteJeuVideo01->setSortieJeuVideo($this->getReference('sortieJeuVideo01'));
@@ -30,12 +31,13 @@ class LoadNoteJeuVideoData extends AbstractFixture implements OrderedFixtureInte
         $manager->persist($noteJeuVideo03);
 
         $manager->flush();
+        */
     }
 
     public function getOrder()
     {
         // the order in which fixtures will be loaded
-        return 11;
+        return 12;
     }
  
 }
