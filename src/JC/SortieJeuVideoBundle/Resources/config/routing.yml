@@ -1,3 +1,6 @@
-jc_sortie_jeu_video_homepage:
+jc_retroxboxone_homepage:
     path:     /homepage
     defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:index }
+jc_retroxboxone_detail:
+    path:     /detail/{id}
+    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:detail }    

@@ -49,6 +49,24 @@ class SortieJeuVideo
      */
     private $updatedAt;
 
+   /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $imageBig;
+
+    /**
+     * @Vich\UploadableField(mapping="jeuvideobig_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageBigFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $updatedBigAt;    
+
     /**
      * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\Tiers", cascade={"persist"})
      * @ORM\JoinTable(name="jeuvideo_tiersdev")
@@ -179,6 +197,48 @@ class SortieJeuVideo
     public function getImageFile()
     {
         return $this->imageFile;
+    }    
+
+    /**
+     * Set imageBig
+     *
+     * @param string $imageBig
+     *
+     * @return SortieJeuVideo
+     */
+    public function setImageBig($imageBig)
+    {
+        $this->imageBig = $imageBig;
+
+        return $this;
+    }
+
+    /**
+     * Get imageBig
+     *
+     * @return string
+     */
+    public function getImageBig()
+    {
+        return $this->imageBig;
+    }
+
+    public function setImageBigFile(File $imageBig = null)
+    {
+        $this->imageBigFile = $imageBig;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($imageBig) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedBigAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageBigFile()
+    {
+        return $this->imageBigFile;
     }    
     
     /**
@@ -400,5 +460,29 @@ class SortieJeuVideo
     public function getEnBoite()
     {
         return $this->enBoite;
+    }
+
+    /**
+     * Set updatedBigAt
+     *
+     * @param \DateTime $updatedBigAt
+     *
+     * @return SortieJeuVideo
+     */
+    public function setUpdatedBigAt($updatedBigAt)
+    {
+        $this->updatedBigAt = $updatedBigAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedBigAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedBigAt()
+    {
+        return $this->updatedBigAt;
     }
 }

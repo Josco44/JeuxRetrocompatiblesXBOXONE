@@ -16,4 +16,15 @@ class RetroXboxOneController extends Controller
         return $this->render('JCSortieJeuVideoBundle:RetroXboxOne:index.html.twig',array("listLastExitGames" => $listLastExitGame));
     }
 
+    public function detailAction($id)
+    {
+
+    	$repository = $this->getDoctrine()->getManager()->getRepository('JCSortieJeuVideoBundle:SortieJeuVideo');
+
+    	$sortieJeuVideo = $repository->find($id);
+
+    	return $this->render('JCSortieJeuVideoBundle:RetroXboxOne:detail.html.twig',array("sortieJeuVideo" => $sortieJeuVideo));
+
+    }
+
 }

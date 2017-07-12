@@ -10,6 +10,7 @@ easy_admin:
                     - themesJeu
                     - agePegi
                     - classificationsPegi
+                    - modesJeu
             show:
                 fields:
                     - id
@@ -21,6 +22,7 @@ easy_admin:
                     - themesJeu
                     - agePegi
                     - classificationsPegi
+                    - modesJeu
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
@@ -33,4 +35,5 @@ easy_admin:
                     - themesJeu                                    
                     - agePegi
                     - classificationsPegi
+                    - modesJeu
 

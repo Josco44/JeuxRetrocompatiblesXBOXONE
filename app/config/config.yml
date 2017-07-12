@@ -10,6 +10,7 @@ parameters:
     locale: fr
     #app.path.jeuvideo_images: /uploads/images/jeuvideo
     app.path.jeuvideo_images: /sortiejeuvideo/web/uploads/images/jeuvideo
+    app.path.jeuvideobig_images: /sortiejeuvideo/web/uploads/images/jeuvideobig
     app.path.nationalite_images: /sortiejeuvideo/web/uploads/images/nationalite
     app.path.agepegi_images: /sortiejeuvideo/web/uploads/images/agepegi
     app.path.classificationpegi_images: /sortiejeuvideo/web/uploads/images/classificationpegi
@@ -82,6 +83,9 @@ vich_uploader:
         jeuvideo_images:
             uri_prefix:         '%app.path.jeuvideo_images%'
             upload_destination: '%kernel.root_dir%/../web/uploads/images/jeuvideo'
+        jeuvideobig_images:
+            uri_prefix:         '%app.path.jeuvideobig_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/jeuvideobig'
         nationalite_images:
             uri_prefix:         '%app.path.nationalite_images%'
             upload_destination: '%kernel.root_dir%/../web/uploads/images/nationalite'

@@ -18,6 +18,7 @@ easy_admin:
                     - support
                     - { property: 'dateSortie', format: 'j / M / Y' }
                     - { property: 'image', type: 'image', base_path: '%app.path.jeuvideo_images%' }
+                    - { property: 'imageBig', type: 'image', base_path: '%app.path.jeuvideobig_images%' }
                     - retroXboxOne
                     - enBoite
                     - { property: 'dateSortieRetroXboxOne', format: 'j / M / Y' }
@@ -30,6 +31,7 @@ easy_admin:
                     - support                                     
                     - { property: 'dateSortie', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
                     - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'imageBigFile', type: 'vich_image' }
                     - retroXboxOne
                     - enBoite
                     - { property: 'dateSortieRetroXboxOne', type_options: {  widget: 'single_text', format: 'dd-MM-yyyy' } }
