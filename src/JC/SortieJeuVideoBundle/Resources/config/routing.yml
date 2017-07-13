@@ -3,4 +3,7 @@ jc_retroxboxone_homepage:
     defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:index }
 jc_retroxboxone_detail:
     path:     /detail/{id}
-    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:detail }    
+    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:detail } 
+jc_retroxboxone_all:
+    path:     /all
+    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:all }        

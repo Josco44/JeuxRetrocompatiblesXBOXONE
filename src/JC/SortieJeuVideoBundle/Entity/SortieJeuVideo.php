@@ -56,7 +56,7 @@ class SortieJeuVideo
     private $imageBig;
 
     /**
-     * @Vich\UploadableField(mapping="jeuvideobig_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="jeuvideobig_images", fileNameProperty="imageBig")
      * @var File
      */
     private $imageBigFile;

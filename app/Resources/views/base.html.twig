@@ -4,9 +4,10 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Jeux rétrocompatibles XBOX ONE{% endblock %}</title>
         {% block stylesheets %}
+        <!--'bundles/app/css/styleSolar.min.css'-->
         <!--'css/bootstrap.css'-->
         {% stylesheets filter='cssrewrite'
-          'bundles/app/css/styleSolar.min.css'
+          'bundles/app/css/styleSimplex.min.css'
           'bundles/app/css/stylePerso.css'
           'css/font-awesome.css' %}
           <link href="{{ asset_url }}" rel="stylesheet">

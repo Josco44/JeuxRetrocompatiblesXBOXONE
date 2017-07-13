@@ -11,16 +11,16 @@
           <div class="panel-body panel-height">
             <div class="row">
               <div class="col-md-4">
-                <img src="{{ vich_uploader_asset(sortieJeuVideo, 'imageBigFile') }}" alt="{{ sortieJeuVideo.jeuvideo.nom }}" />
+                <img src="{{ vich_uploader_asset(sortieJeuVideo, 'imageBigFile') }}" alt="{{ sortieJeuVideo.jeuVideo.nom }}" />
               </div>
               <div class="col-md-8">
-                <p>{{ sortieJeuVideo.jeuvideo.description }}</p>
+                <p>{{ sortieJeuVideo.jeuVideo.description }}</p>
                 <p></p>
                 <div class="row">
-                  <div class="col-md-2">
-                    Editeur(s)     :
+                  <div class="col-md-3">
+                    Editeur(s) :
                   </div>
-                  <div class="col-md-10">
+                  <div class="col-md-9">
                     {% for tiersEdi in sortieJeuVideo.tiersEditeur %}
                       {% if not loop.first %}
                       ,&nbsp;
@@ -30,10 +30,10 @@
                   </div>
                 </div>    
                 <div class="row">  
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     Développeur(s) :
                   </div>
-                  <div class="col-md-10">
+                  <div class="col-md-9">
                     {% for tiersDev in sortieJeuVideo.tiersDeveloppeur %}
                       {% if not loop.first %}
                       ,&nbsp;
@@ -43,11 +43,93 @@
                   </div>  
                 </div>  
                 <div class="row">  
-                  <div class="col-md-2">
-                    Date sortie    :
+                  <div class="col-md-3">
+                    Date sortie :
                   </div>
-                  <div class="col-md-10">
+                  <div class="col-md-9">
                     {{ sortieJeuVideo.dateSortie|dateFormat }}
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Date sortie XBOX ONE :
+                  </div>
+                  <div class="col-md-9">
+                    {{ sortieJeuVideo.dateSortieRetroXboxOne|dateFormat }}
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Genres :
+                  </div>
+                  <div class="col-md-9">
+                    {% for typeJeu in sortieJeuVideo.jeuVideo.typesJeu %}
+                      {% if not loop.first %}
+                      ,&nbsp;
+                      {% endif %}  
+                      {{ typeJeu.nom }}
+                    {% endfor %}  
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Themes :
+                  </div>
+                  <div class="col-md-9">
+                    {% for themeJeu in sortieJeuVideo.jeuVideo.themesJeu %}
+                      {% if not loop.first %}
+                      ,&nbsp;
+                      {% endif %}  
+                      {{ themeJeu.nom }}
+                    {% endfor %}  
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Modes :
+                  </div>
+                  <div class="col-md-9">
+                    {% for modeJeu in sortieJeuVideo.jeuVideo.modesJeu %}
+                      {% if not loop.first %}
+                      ,&nbsp;
+                      {% endif %}  
+                      {{ modeJeu.nom }}
+                    {% endfor %}  
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    &nbsp;
+                  </div>
+                  <div class="col-md-9">
+                    &nbsp;
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Classification du jeu :
+                  </div>
+                  <div class="col-md-9">
+                    <img src="{{ vich_uploader_asset(sortieJeuVideo.jeuVideo.agePegi, 'imageFile') }}" alt="{{ sortieJeuVideo.jeuVideo.agePegi }}" />
+                    {% for classificationPegi in sortieJeuVideo.jeuVideo.classificationsPegi %}
+                      <img src="{{ vich_uploader_asset(classificationPegi, 'imageFile') }}" alt="{{ classificationPegi }}" />
+                    {% endfor %}
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    &nbsp;
+                  </div>
+                  <div class="col-md-9">
+                    &nbsp;
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Site Web :
+                  </div>
+                  <div class="col-md-9">
+                     <a href="{{ sortieJeuVideo.jeuVideo.siteWeb }}">{{ sortieJeuVideo.jeuvideo.nom }}</a> 
                   </div>  
                 </div>
               </div>

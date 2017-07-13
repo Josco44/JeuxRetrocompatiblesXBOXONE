@@ -10,13 +10,13 @@ class DateFormatExtension extends \Twig_Extension
 
 	function dateFormat($date)
 	{
-		$jour = array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
-		$mois = array("Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre");
-		var_dump($date);
-		var_dump();
-		// $dateFr = $jour[$date("w")]." ".$mois[$date("n")]." ".$date("Y");
-		// return $dateFr;
-		return "";
+
+        $formatter = new \IntlDateFormatter('fr_FR',
+        	                               \IntlDateFormatter::LONG,
+                                           \IntlDateFormatter::NONE,
+                                           'Europe/Paris',
+                                           \IntlDateFormatter::GREGORIAN );
+		return $formatter->format($date);
 	}
 
 	public function getName()
