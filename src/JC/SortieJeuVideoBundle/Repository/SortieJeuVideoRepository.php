@@ -17,8 +17,34 @@ class SortieJeuVideoRepository extends \Doctrine\ORM\EntityRepository
 		$qb = $this->createQueryBuilder('a');
 
 		$qb->setMaxResults($limit);
+		$qb->orderBy('a.dateSortieRetroXboxOne', 'DESC');
 
 		return $qb->getQuery()->getResult(); 
+
+	}
+
+	public function findCountGame()
+	{
+		$qb = $this->createQueryBuilder('a');
+
+		$qb->select('COUNT(a)');
+
+		return $qb->getQuery()->getSingleScalarResult(); 
+
+	}
+
+	public function findTripleAGame($limit)
+	{
+
+		$qb = $this->createQueryBuilder('a');
+		$qb->join('a.jeuVideo','jeu');
+		$qb->addSelect('jeu');
+		$qb->where('jeu.tripleA = :oui');
+		$qb->setParameter('oui', '1');
+		$qb->setMaxResults($limit);
+		$qb->orderBy('a.dateSortieRetroXboxOne', 'DESC');
+
+		return $qb->getQuery()->getResult();
 
 	}
 

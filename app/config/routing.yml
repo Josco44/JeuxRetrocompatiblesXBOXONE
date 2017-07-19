@@ -2,10 +2,6 @@ jc_sortie_jeu_video:
     resource: "@JCSortieJeuVideoBundle/Resources/config/routing.yml"
     prefix:   /
 
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
-
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/"
     type:     annotation

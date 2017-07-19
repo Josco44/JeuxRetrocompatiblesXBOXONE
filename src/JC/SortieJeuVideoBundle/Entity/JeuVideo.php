@@ -45,7 +45,7 @@ class JeuVideo
     /**
      * @var string
      *
-     * @ORM\Column(name="siteWeb", type="string", length=255)
+     * @ORM\Column(name="siteWeb", type="string", length=255, nullable=true)
      */
     private $siteWeb;    
 
@@ -74,6 +74,13 @@ class JeuVideo
      * @ORM\ManyToMany(targetEntity="JC\SortieJeuVideoBundle\Entity\ModeJeu", cascade={"persist"})
      */
     private $modesJeu;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="triplea", type="boolean")
+     */
+    private $tripleA;    
 
 
     /**
@@ -433,5 +440,29 @@ class JeuVideo
     public function getSiteWeb()
     {
         return $this->siteWeb;
+    }
+
+    /**
+     * Set tripleA
+     *
+     * @param boolean $tripleA
+     *
+     * @return JeuVideo
+     */
+    public function setTripleA($tripleA)
+    {
+        $this->tripleA = $tripleA;
+
+        return $this;
+    }
+
+    /**
+     * Get tripleA
+     *
+     * @return boolean
+     */
+    public function getTripleA()
+    {
+        return $this->tripleA;
     }
 }

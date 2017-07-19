@@ -8,64 +8,84 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <div class="row">
-              <div class="col-md-6 text-left"><h5>Ajoutés récemment</h5></div>
+              <div class="col-md-6 text-left"><h5>Dernier jeux rétrocompatibles</h5></div>
               <div class="col-md-6 text-right">
                 <a href="{{ path('jc_retroxboxone_all') }}">Tous les jeux</a> 
               </div>
             </div>
           </div>
           <div class="panel-body panel-height">
-            <!--
-            <div class="row">
-              {% for listLastExitGame in listLastExitGames %}
+            {% set nombre = 0 %}
+            {% for listLastExitGame in listLastExitGames %}
+              {% set nombre = nombre + 1 %}
+              {% if loop.index % 6 == 1 %}
+              <div class="row">
+              {% endif %}  
                 <div class="col-sm-6 col-md-2">
-                  <div class="thumbnail">
-                    <img src="{{ vich_uploader_asset(listLastExitGame, 'imageFile') }}" alt="{{ listLastExitGame.jeuvideo.nom }}" />
+                  <div class="thumbnail homepage">
                     <div class="caption">
-                      <h6>{{ listLastExitGame.jeuvideo.nom }}</h6>
-                      <button type="button" class="btn btn-xs btn-primary">80</button>
-                      <p></p>
-                      <p>
-                        <a href="{{ path('jc_retroxboxone_detail', { 'id' : listLastExitGame.id }) }}" class="btn btn-info btn-block" role="button">
-                          Détail
-                        </a>
-                      </p>
+                      {{ listLastExitGame.dateSortieRetroXboxOne|dateFormat }}
                     </div>
-                  </div>
-                </div>
-              {% endfor %}  
-            </div>
-            <div class="row">
-              {% for listLastExitGame in listLastExitGames %}
-                <div class="col-sm-6 col-md-2">
-                  <p>{{ listLastExitGame.jeuvideo.nom }}</p>
-                  <img src="{{ vich_uploader_asset(listLastExitGame, 'imageFile') }}" class="img-responsive" alt="{{ listLastExitGame.jeuvideo.nom }}" /> 
-                </div>  
-              {% endfor %}  
-            </div> 
-            <div class="row">
-              {% for listLastExitGame in listLastExitGames|slice(0, 6) %}
-                <div class="col-lg-2">
-                  <img src="{{ vich_uploader_asset(listLastExitGame, 'imageFile') }}" class="img-responsive" alt="{{ listLastExitGame.jeuvideo.nom }}" 
-                  />
-                  <h6>{{ listLastExitGame.jeuvideo.nom }}</h6>
-                  <a href="{{ path('jc_retroxboxone_detail', { 'id' : listLastExitGame.id }) }}">{{ listLastExitGame.jeuvideo.nom }}</a>
-                </div>  
-              {% endfor %}  
-            </div>
-            -->
-            <div class="row">
-              {% for listLastExitGame in listLastExitGames %}
-                <div class="col-sm-6 col-md-2">
-                  <div class="thumbnail">
-                    <img src="{{ vich_uploader_asset(listLastExitGame, 'imageFile') }}" alt="{{ listLastExitGame.jeuvideo.nom }}" />
+                    <a href="{{ path('jc_retroxboxone_detail', { 'id' : listLastExitGame.id }) }}">
+                      <img src="{{ vich_uploader_asset(listLastExitGame, 'imageFile') }}" alt="{{ listLastExitGame.jeuvideo.nom }}" />
+                    </a>
                     <div class="caption">
                       <a href="{{ path('jc_retroxboxone_detail', { 'id' : listLastExitGame.id }) }}">{{ listLastExitGame.jeuvideo.nom }}</a>
                     </div>
                   </div>
                 </div>
-              {% endfor %}  
+              {% if loop.index % 6 == 0 %}  
+              </div>
+              {% endif %}
+            {% endfor %} 
+            {% if nombre % 6 != 0 %}  
             </div>
+            {% endif %} 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-md-6 text-left"><h5>Derniers jeux AAA rétrocompatibles</h5></div>
+              <div class="col-md-6 text-right">
+                <a href="{{ path('jc_retroxboxone_all') }}">Tous les jeux AAA</a> 
+              </div>
+            </div>
+          </div>
+          <div class="panel-body panel-height">
+            {% set nombre = 0 %}
+            {% for listLastTripleAGame in listLastTripleAGames %}
+              {% set nombre = nombre + 1 %}
+              {% if loop.index % 6 == 1 %}
+              <div class="row">
+              {% endif %}  
+                <div class="col-sm-6 col-md-2">
+                  <div class="thumbnail homepage">
+                    <div class="caption">
+                      {{ listLastTripleAGame.dateSortieRetroXboxOne|dateFormat }}
+                    </div>
+                    <a href="{{ path('jc_retroxboxone_detail', { 'id' : listLastTripleAGame.id }) }}">
+                      <img src="{{ vich_uploader_asset(listLastTripleAGame, 'imageFile') }}" alt="{{ listLastTripleAGame.jeuvideo.nom }}" />
+                    </a>
+                    <div class="caption">
+                      <a href="{{ path('jc_retroxboxone_detail', { 'id' : listLastTripleAGame.id }) }}">{{ listLastTripleAGame.jeuvideo.nom }}</a>
+                    </div>
+                  </div>
+                </div>
+              {% if loop.index % 6 == 0 %}  
+              </div>
+              {% endif %}
+            {% endfor %} 
+            {% if nombre % 6 != 0 %}  
+            </div>
+            {% endif %} 
           </div>
         </div>
       </div>

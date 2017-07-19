@@ -7,13 +7,16 @@ easy_admin:
                     - id
                     - nom
                     - { property: 'image', type: 'image', base_path: '%app.path.classificationpegi_images%' }
+                    - description
             show:
                 fields:
                     - id
                     - nom
                     - { property: 'image', type: 'image', base_path: '%app.path.classificationpegi_images%' }
+                    - description
             form:
                 fields:
                     - { property: 'id', type_options: { 'disabled': true } }
                     - nom
                     - { property: 'imageFile', type: 'vich_image' }
+                    - description

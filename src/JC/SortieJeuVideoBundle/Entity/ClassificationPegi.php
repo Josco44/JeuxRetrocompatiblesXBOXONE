@@ -32,6 +32,13 @@ class ClassificationPegi
     private $nom;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
@@ -159,5 +166,29 @@ class ClassificationPegi
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return ClassificationPegi
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

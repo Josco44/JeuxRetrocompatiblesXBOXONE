@@ -6,4 +6,4 @@ jc_retroxboxone_detail:
     defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:detail } 
 jc_retroxboxone_all:
     path:     /all
-    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:all }        
+    defaults: { _controller: JCSortieJeuVideoBundle:RetroXboxOne:all }

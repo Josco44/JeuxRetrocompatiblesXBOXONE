@@ -1,5 +1,5 @@
 {% extends "::base.html.twig" %}
-{% block title %}{{ parent() }} - Détail - {% endblock %}
+{% block title %}{{ parent() }} - Détail {% endblock %}
 
 {% block body %}  
 
@@ -7,11 +7,11 @@
     <div class="col-lg-12">
       <div class="bs-component">
         <div class="panel panel-default">
-          <div class="panel-heading">{{ sortieJeuVideo.jeuvideo.nom }}</div>
+          <div class="panel-heading"><h2>{{ sortieJeuVideo.jeuvideo.nom }}</h2></div>
           <div class="panel-body panel-height">
             <div class="row">
               <div class="col-md-4">
-                <img src="{{ vich_uploader_asset(sortieJeuVideo, 'imageBigFile') }}" alt="{{ sortieJeuVideo.jeuVideo.nom }}" />
+                <img src="{{ vich_uploader_asset(sortieJeuVideo, 'imageBigFile') }}" alt="{{ sortieJeuVideo.jeuVideo.nom }}" title="{{ sortieJeuVideo.jeuVideo.nom }}"/>
               </div>
               <div class="col-md-8">
                 <p>{{ sortieJeuVideo.jeuVideo.description }}</p>
@@ -24,7 +24,8 @@
                     {% for tiersEdi in sortieJeuVideo.tiersEditeur %}
                       {% if not loop.first %}
                       ,&nbsp;
-                      {% endif %}  
+                      {% endif %}
+                      <img src="{{ vich_uploader_asset(tiersEdi.nationalite, 'imageFile') }}" alt="{{ tiersEdi.nationalite.nom }}" title="{{ tiersEdi.nationalite.nom }}"/>  
                       {{ tiersEdi.nom }}
                     {% endfor %}  
                   </div>
@@ -37,7 +38,8 @@
                     {% for tiersDev in sortieJeuVideo.tiersDeveloppeur %}
                       {% if not loop.first %}
                       ,&nbsp;
-                      {% endif %}  
+                      {% endif %}
+                      <img src="{{ vich_uploader_asset(tiersDev.nationalite, 'imageFile') }}" alt="{{ tiersDev.nationalite.nom }}" title="{{ tiersDev.nationalite.nom }}"/>  
                       {{ tiersDev.nom }}
                     {% endfor %}  
                   </div>  
@@ -52,7 +54,7 @@
                 </div>
                 <div class="row">  
                   <div class="col-md-3">
-                    Date sortie XBOX ONE :
+                    Date sortie Xbox One :
                   </div>
                   <div class="col-md-9">
                     {{ sortieJeuVideo.dateSortieRetroXboxOne|dateFormat }}
@@ -60,7 +62,7 @@
                 </div>
                 <div class="row">  
                   <div class="col-md-3">
-                    Genres :
+                    Genre(s) :
                   </div>
                   <div class="col-md-9">
                     {% for typeJeu in sortieJeuVideo.jeuVideo.typesJeu %}
@@ -73,7 +75,7 @@
                 </div>
                 <div class="row">  
                   <div class="col-md-3">
-                    Themes :
+                    Theme(s) :
                   </div>
                   <div class="col-md-9">
                     {% for themeJeu in sortieJeuVideo.jeuVideo.themesJeu %}
@@ -86,7 +88,7 @@
                 </div>
                 <div class="row">  
                   <div class="col-md-3">
-                    Modes :
+                    Mode(s) :
                   </div>
                   <div class="col-md-9">
                     {% for modeJeu in sortieJeuVideo.jeuVideo.modesJeu %}
@@ -110,9 +112,9 @@
                     Classification du jeu :
                   </div>
                   <div class="col-md-9">
-                    <img src="{{ vich_uploader_asset(sortieJeuVideo.jeuVideo.agePegi, 'imageFile') }}" alt="{{ sortieJeuVideo.jeuVideo.agePegi }}" />
+                    <img src="{{ vich_uploader_asset(sortieJeuVideo.jeuVideo.agePegi, 'imageFile') }}" alt="{{ sortieJeuVideo.jeuVideo.agePegi }}" title="{{ sortieJeuVideo.jeuVideo.agePegi }}" />
                     {% for classificationPegi in sortieJeuVideo.jeuVideo.classificationsPegi %}
-                      <img src="{{ vich_uploader_asset(classificationPegi, 'imageFile') }}" alt="{{ classificationPegi }}" />
+                      <img src="{{ vich_uploader_asset(classificationPegi, 'imageFile') }}" alt="{{ classificationPegi }}" title="{{ classificationPegi.description }}"/>
                     {% endfor %}
                   </div>  
                 </div>
@@ -130,6 +132,18 @@
                   </div>
                   <div class="col-md-9">
                      <a href="{{ sortieJeuVideo.jeuVideo.siteWeb }}">{{ sortieJeuVideo.jeuvideo.nom }}</a> 
+                  </div>  
+                </div>
+                <div class="row">  
+                  <div class="col-md-3">
+                    Vendu en boite :
+                  </div>
+                  <div class="col-md-9">
+                     {% if sortieJeuVideo.enBoite %}
+                     Oui
+                     {% else %}
+                     Non 
+                     {% endif %}
                   </div>  
                 </div>
               </div>

@@ -2,12 +2,13 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Jeux rétrocompatibles XBOX ONE{% endblock %}</title>
+        <title>{% block title %}Jeux rétrocompatibles Xbox One{% endblock %}</title>
         {% block stylesheets %}
         <!--'bundles/app/css/styleSolar.min.css'-->
+        <!--'bundles/app/css/styleSimplex.min.css'-->
         <!--'css/bootstrap.css'-->
         {% stylesheets filter='cssrewrite'
-          'bundles/app/css/styleSimplex.min.css'
+          'bundles/app/css/styleUnity.min.css'
           'bundles/app/css/stylePerso.css'
           'css/font-awesome.css' %}
           <link href="{{ asset_url }}" rel="stylesheet">
@@ -26,7 +27,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="{{path('jc_retroxboxone_homepage')}}">Jeux rétrocompatibles XBOX ONE</a>
+              <a class="navbar-brand" href="{{path('jc_retroxboxone_homepage')}}">Jeux rétrocompatibles Xbox One</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -41,7 +42,7 @@
                     <li><a href="#">Les mieux notés</a></li>
                     <li><a href="#">Les jeux triple A</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">test</a></li>
+                    <li><a href="{{path('jc_retroxboxone_all')}}">Tous les jeux</a></li>
                     <li class="divider"></li>
                     <li><a href="#">test</a></li>
                   </ul>
@@ -68,10 +69,15 @@
             <div class="col-lg-12">
               <div class="bs-component">
                 <div class="jumbotron">
-                  <h1>Rétrocompatibilité XBOX ONE</h1>
-                  <p>La rétrocompatibilité XBOX ONE permet de jouer à des jeux XBOX 360 sur une console XBOX ONE.</p>
+                  <h1>Rétrocompatibilité Xbox One</h1>
+
+                  {{ render(controller('JCSortieJeuVideoBundle:RetroXboxOne:count')) }}
+                  
+                  <p>La rétrocompatibilité Xbox One permet de jouer à des jeux Xbox 360 sur une console Xbox One.</p>
                   <p>Ce site répertorie tous les jeux bénéficiant de cette fonctionnalité.</p>
+                  <!--
                   <p><a class="btn btn-primary btn-lg">En apprendre plus</a></p>
+                  -->
                 </div>
               </div>
             </div>
